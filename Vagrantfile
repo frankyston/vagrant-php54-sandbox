@@ -6,6 +6,7 @@ Vagrant::Config.run do |config|
   config.vm.boot_mode = :gui
   config.vm.network :hostonly, "33.33.33.10"
   config.vm.share_folder "www", "/var/www", "./www"
+  config.vm.forward_port 80, 8080
 
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "manifests"
